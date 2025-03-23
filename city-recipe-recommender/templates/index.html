@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Based Recipe Recommender</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>City Based Recipe Recommender</h1>
+            <p>Select a city to explore its recipes</p>
+        </header>
+        <div class="city-selector">
+            <select id="city-dropdown" onchange="fetchRecipes()">
+                <option value="">Select a City</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Pune">Pune</option>
+                <option value="Nagpur">Nagpur</option>
+                <option value="Aurangabad">Aurangabad</option>
+            </select>
+        </div>
+        <div id="recipes" class="recipes">
+            <!-- Recipes will be displayed here -->
+        </div>
+    </div>
+    
+    <script src="static/script.js"></script>
+</body>
+</html>

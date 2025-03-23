@@ -1,0 +1,71 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: url('https://example.com/food-background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+}
+
+.container {
+    text-align: center;
+    padding: 50px;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.city-selector select {
+    padding: 10px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    transition: 0.3s ease;
+}
+
+.city-selector select:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.recipes {
+    margin-top: 30px;
+}
+
+.recipe-card {
+    margin: 20px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.recipe-card:hover {
+    transform: scale(1.05);
+}
+
+.recipe-card img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.recipe-card h3 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+}
+
+.recipe-card p {
+    font-size: 1rem;
+}

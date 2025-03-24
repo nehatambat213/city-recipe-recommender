@@ -22,14 +22,16 @@ recipes_data = {
     ]
 }
 
-@app.route('/')
-def index():
-    return render_template('index.html')
+import webbrowser
+from flask import Flask
 
-@app.route('/get_recipes/<city>')
-def get_recipes(city):
-    recipes = recipes_data.get(city, [])
-    return jsonify({"recipes": recipes})
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Hello, Flask is running!"
 
 if __name__ == '__main__':
+    webbrowser.open("http://127.0.0.1:5000")  # This will open the browser
     app.run(debug=True)
+

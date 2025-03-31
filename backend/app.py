@@ -1,6 +1,8 @@
-from flask import Flask, render_template, request
+from flask import Flask, jsonify, request
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)  # Allow requests from frontend
 
 # Sample city-based recipes data
 recipes = {
@@ -10,16 +12,15 @@ recipes = {
     "Chennai": ["Dosa", "Idli", "Sambar"]
 }
 
-@app.route("/", methods=["GET", "POST"])
-def home():
-    selected_city = None
-    recommended_recipes = []
+# API to get list of cities
+@app.route("/cities", methods=["GET"])
+def get_cities():
+    return jsonify(list(recipes.keys()))
 
-    if request.method == "POST":
-        selected_city = request.form["city"]
-        recommended_recipes = recipes.get(selected_city, ["No recipes found"])
-
-    return render_template("index.html", cities=recipes.keys(), recipes=recommended_recipes, selected_city=selected_city)
+# API to get recipes for a selected city
+@app.route("/recipes/<city>", methods=["GET"])
+def get_recipes(city):
+    return jsonify(recipes.get(city, ["No recipes found"]))
 
 if __name__ == "__main__":
     app.run(debug=True)
